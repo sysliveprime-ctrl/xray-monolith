@@ -1,3 +1,50 @@
+# Anthology Engine Fork
+
+Этот fork используется Anthology Launcher как закреплённый канал движка для
+Anthology 2.1.
+
+Основной публичный архив для лаунчера:
+
+```text
+https://github.com/sysliveprime-ctrl/xray-monolith/releases/download/2026.5.8/STALKER-Anomaly-modded-exes-MT-TEST_2026.5.8.zip
+```
+
+Ветка `mt` закреплена на стабильном MT-состоянии от 2026-05-08:
+
+```text
+080c4e8b6af8107570d1bd5b960bc73e450a8895
+```
+
+Релиз `2026.5.8` содержит архив MT-движка, который лаунчер устанавливает в
+папку игры. Из архива ставятся все файлы `bin` и `db`, включая `.pdb` для
+отладки.
+
+## Как Обновляет Лаунчер
+
+Лаунчер скачивает ZIP из release assets этого fork, распаковывает `bin` и `db`
+в папку игры и сохраняет состояние в:
+
+```text
+webcache\engine_update\engine_state.json
+```
+
+Перед заменой существующих файлов создаётся backup:
+
+```text
+webcache\engine_update\backup_YYYYMMDD_HHMMSS
+```
+
+## Правила Для Anthology
+
+- Не переключать лаунчер обратно на `themrdemonized/xray-monolith` без явного
+  решения.
+- Не удалять `.pdb` из engine archive: они нужны для отладки.
+- Не двигать release tag `2026.5.8`; если нужен новый движок, создать новую
+  версию и обновить `ENGINE_RELEASE_VERSION` в лаунчере.
+- Upstream README ниже оставлен как справка по оригинальному проекту.
+
+---
+
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/themrdemonized/xray-monolith)
 
 # STALKER-Anomaly-modded-exes
